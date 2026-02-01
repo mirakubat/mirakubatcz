@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Míra Kubát - Shoptet Profesionál | Školení a správa e-shopů</title>
+    <meta name="description" content="Shoptet profesionál Míra Kubát - školení, nastavení a správa e-shopů na platformě Shoptet. Zlatý partner s 10+ lety zkušeností.">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #06b6d4;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: white;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255,255,255,0.3);
+            margin: 2rem auto;
+            display: block;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .partner-badge {
+            margin-top: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .partner-badge img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .section:nth-child(even) {
+            background: var(--light);
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .testimonials {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .testimonials .section-title {
+            color: white;
+        }
+
+        .testimonials .section-title::after {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-company {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .cta-section {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .footer {
+            background: #0f172a;
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll animation trigger */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <span>📊</span>
+                <span>Míra Kubát</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Shoptet Profesionál pro váš e-shop</h1>
+            <p class="hero-subtitle">Pomůžu vám rozjet nebo vylepšit váš e-shop</p>
+            
+            <!-- PLACEHOLDER: Zde vložte vaši fotografii -->
+            <div style="width: 200px; height: 200px; margin: 2rem auto; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 6px solid rgba(255,255,255,0.3);">
+                👤
+            </div>
+            
+            <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                Jmenuji se Míra Kubát a jsem Shoptet Zlatý Partner. Pomáhám klientům zvládnout jejich e-shop od začátku do konce, ať už přes školení, pomoc s nastavením či automatizací procesů.
+            </p>
+            
+            <div class="partner-badge">
+                <!-- PLACEHOLDER: Zde vložte Shoptet Zlatý Partner logo -->
+                <div style="display: inline-block; padding: 1rem 2rem; background: rgba(255,255,255,0.2); border-radius: 12px; font-weight: 600;">
+                    🏆 Shoptet Zlatý Partner
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Jak vám mohu pomoci?</h2>
+            <div class="intro-text animate-on-scroll">
+                <p>Přes 2 roky jsem vedl tým technické podpory na Shoptetu a téměř 10 let se e-shopům na Shoptetu věnuji. Mám tak velmi dobrý vhled do samotné aplikace i jejího chování a nastavení. Ať už se jedná o základní nastavení aplikace, napojení dalších služeb nebo třeba správa domén a nastavení veškerých DNS záznamů či pomoc při opravě e-shopu. S tím vším vám pomohu a vy se tak můžete naplno věnovat samotnému prodeji.</p>
+                <p style="margin-top: 1rem;">Sám vím, že administrace občas obsahuje velmi mnoho informací a člověku může nějakou dobu zabrat, než se vším prokouše a pochopí, co vše má vlastně udělat a jak celý e-shop nastavit. Času ale není nekonečně a jistě jej dokážete využít lépe. Rád vám pomohu se školením Shoptetu, ať už osobně v Praze nebo formou telefonátu či vzdálené plochy.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Nastavení e-shopu</h3>
+                    <p>Pomůžu vám s úpravami produktů. Upravím vám DNS záznamy a pomohu s nastavením dalších věcí v administraci tak, abyste se mohli naplno věnovat prodeji a nic vás nebrzdilo.</p>
+                </div>
+
+                <div class="service-card animate-on-scroll" style="animation-delay: 0.1s;">
+                    <div class="service-icon">🎓</div>
+                    <h3>Školení a konzultace</h3>
+                    <p>Začínáte s e-shopem a nevíte, jak nastavit systém podle vašich představ nebo jakým způsobem s administrací pracovat či co vůbec nastavit? Vše potřebné vám vysvětlím.</p>
+                </div>
+
+                <div class="service-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <div class="service-icon">📊</div>
+                    <h3>Analýza e-shopu</h3>
+                    <p>Nejste si jistí, zda e-shop využíváte naplno? Potřebujete pomoci s automatizací některých činností v administraci? Projdu váš e-shop a navrhnu potřebné úpravy.</p>
+                </div>
+
+                <div class="service-card animate-on-scroll" style="animation-delay: 0.3s;">
+                    <div class="service-icon">🔧</div>
+                    <h3>Správa e-shopu</h3>
+                    <p>Nemáte čas na změnu cen, skladových zásob nebo chcete spravovat i jiné věci v e-shopu? Pomohu vám se správou a zajistím vám aktualizaci dat.</p>
+                </div>
+
+                <div class="service-card animate-on-scroll" style="animation-delay: 0.4s;">
+                    <div class="service-icon">🔄</div>
+                    <h3>Převod e-shopu</h3>
+                    <p>Chcete přejít k Shoptetu, ale nevíte, jak začít a jakým způsobem vše přesunout? Vše vysvětlím a s přesunem vám pomohu.</p>
+                </div>
+
+                <div class="service-card animate-on-scroll" style="animation-delay: 0.5s;">
+                    <div class="service-icon">🧩</div>
+                    <h3>Rozšíření e-shopu</h3>
+                    <p>Nejste si jistí, jaké rozšíření je pro vás to správné? Projdu s vámi vaše potřeby a podle toho vám doporučím ten správný doplněk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Co o mé pomoci říkají klienti?</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">"Děkuji Mírovi za veškerou jeho trpělivost a pomoc s nastavováním funkcí našeho e-shopu. Míra je strašně lidský, vše normálně vysvětlí, tak aby tomu rozuměl i úplný laik a vlastně celá komunikace i nastavování je nesmírně komfortní. Ještě jednou moc díky, jsem ráda, že jsem se na Tebe mohla s důvěrou obrátit a věřím, že i do budoucna budeme mít další záležitosti k řešení. :-)"</p>
+                    <div class="testimonial-author">Jana</div>
+                    <div class="testimonial-company">golfstars.cz</div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.1s;">
+                    <p class="testimonial-text">"Absolvovala jsem u pana Kubáta školení užívání Shoptetu a můžu jeho služby stoprocentně doporučit. Všechny mé otázky mi byly zodpovězeny, s každým dotazem si poradil a vše srozumitelně vysvětlil, byl trpělivý, milý a zároveň profesionální. Oceňuji i vlastní názor na náš současný e-shop a také cenné rady, co a jak vylepšit. Pokud budu v budoucnu potřebovat opět s něčím poradit, určitě se znovu obrátím na pana Kubáta."</p>
+                    <div class="testimonial-author">Jana</div>
+                    <div class="testimonial-company">karavany-krs.cz</div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.2s;">
+                    <p class="testimonial-text">"Pan Kubát mě velmi potěšil a především pomohl. Budoucí e-shop je těsně před spuštěním a s některými detaily jsem si nevěděl rady. Pan Kubát mi zodpověděl všechny otázky, poradil jak nastavit co potřebuji a ještě dodal několik cenných rad k e-commerci. Ve spolupráci budeme i nadále pokračovat. Děkuji!"</p>
+                    <div class="testimonial-author">Pavel</div>
+                    <div class="testimonial-company">tokafe.cz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Potřebujete poradit? Jsem tu pro vás!</h2>
+            <a href="mailto:info@mirakubat.cz" class="cta-button">Napište mi</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Zásady ochrany osobních údajů</a>
+            <a href="#">Zásady používání souborů cookies</a>
+        </div>
+        <div class="copyright">© 2024 Míra Kubát</div>
+    </footer>
+
+    <script>
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
