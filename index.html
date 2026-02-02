@@ -14,12 +14,11 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --secondary: #7c3aed;
+            --primary: #20232A;
+            --gold: #bea871;
             --dark: #1e293b;
             --light: #f8fafc;
             --gray: #64748b;
-            --accent: #06b6d4;
         }
 
         body {
@@ -30,24 +29,12 @@
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary);
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         .header-content {
@@ -56,56 +43,49 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 2rem;
         }
 
         .logo {
-            color: white;
-            font-family: 'Sora', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
+            height: 50px;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-link {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
         }
 
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary);
             color: white;
-            padding: 8rem 2rem 6rem;
+            padding: 4rem 2rem 6rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
         }
 
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero h1 {
@@ -129,16 +109,14 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid rgba(255,255,255,0.3);
+            border: 6px solid var(--gold);
             margin: 2rem auto;
             display: block;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
 
         .partner-badge {
             margin-top: 2rem;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
         .partner-badge img {
@@ -154,7 +132,6 @@
 
         .section {
             padding: 5rem 0;
-            animation: fadeInUp 0.8s ease-out both;
         }
 
         .section:nth-child(even) {
@@ -169,6 +146,7 @@
             margin-bottom: 3rem;
             position: relative;
             padding-bottom: 1rem;
+            color: var(--dark);
         }
 
         .section-title::after {
@@ -179,7 +157,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: var(--primary);
             border-radius: 2px;
         }
 
@@ -216,7 +194,7 @@
         .service-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: #626679;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -238,7 +216,7 @@
         }
 
         .testimonials {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary);
             color: white;
             padding: 5rem 0;
         }
@@ -260,7 +238,6 @@
 
         .testimonial-card {
             background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
             padding: 2rem;
             border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.2);
@@ -290,33 +267,32 @@
         }
 
         .cta-section {
-            background: var(--dark);
-            color: white;
+            background: #fff;
+            color: #000;
             padding: 5rem 0;
             text-align: center;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            background: var(--primary);
+            color: #fff;
             padding: 1.2rem 3rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
             margin-top: 2rem;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
 
         .footer {
-            background: #0f172a;
+            background: #1a1d2e;
             color: rgba(255,255,255,0.7);
             padding: 3rem 2rem 2rem;
             text-align: center;
@@ -343,7 +319,81 @@
             opacity: 0.6;
         }
 
+        /* Cookie Bar */
+        .cookie-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #2d3142;
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cookie-bar.show {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .cookie-btn-accept {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cookie-btn-accept:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .cookie-btn-decline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .cookie-btn-decline:hover {
+            border-color: white;
+        }
+
         @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 2rem 4rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -356,27 +406,57 @@
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
+
+            .header-contact {
+                gap: 1rem;
+            }
+
+            .contact-link {
+                font-size: 0.85rem;
+            }
+
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-buttons {
+                justify-content: center;
+                width: 100%;
+            }
         }
 
-        /* Scroll animation trigger */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
+        @media (max-width: 600px) {
+            .logo {
+                height: 40px;
+            }
 
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
+            .contact-link {
+                font-size: 0.8rem;
+            }
+
+            .contact-icon {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Míra Kubát" style="height: 40px;">
+            <a href="index.html">
+                <img src="logo.png" alt="Míra Kubát" class="logo">
             </a>
+            <div class="header-contact">
+                <a href="tel:+420604291299" class="contact-link">
+                    <span class="contact-icon">📞</span>
+                    <span>604 291 299</span>
+                </a>
+                <a href="mailto:info@mirakubat.cz" class="contact-link">
+                    <span class="contact-icon">✉️</span>
+                    <span>info@mirakubat.cz</span>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -384,58 +464,61 @@
         <div class="hero-content">
             <h1>Shoptet Profesionál pro váš e-shop</h1>
             <p class="hero-subtitle">Pomůžu vám rozjet nebo vylepšit váš e-shop</p>
+            
             <img src="fotka.jpg" alt="Míra Kubát" class="profile-image">
             
             <p style="font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
-                Jmenuji se Míra Kubát a jsem Shoptet Zlatý Partner. Pomáhám klientům zvládnout jejich e-shop od začátku do konce, ať už přes školení, pomoc s nastavením či automatizací procesů.
+                Jmenuji se Míra Kubát a jsem <a href="https://partneri.shoptet.cz/profesionalove/kubat-miroslav/" target="_blank" style="color: white; text-decoration: underline;">Shoptet Zlatý Partner</a>. Pomáhám klientům zvládnout jejich e-shop od začátku do konce, ať už přes školení, pomoc s nastavením či automatizací procesů.
             </p>
             
             <div class="partner-badge">
-               <img src="shoptet-logo.png" alt="Shoptet Zlatý Partner" style="max-width: 300px; height: auto;">
+                <a href="https://partneri.shoptet.cz/profesionalove/kubat-miroslav/" target="_blank">
+                    <img src="shoptet-logo.png" alt="Shoptet Zlatý Partner" style="max-width: 300px; height: auto;">
+                </a>
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Jak vám mohu pomoci?</h2>
-            <div class="intro-text animate-on-scroll">
+            <h2 class="section-title">Jak vám mohu pomoci?</h2>
+            <div class="intro-text">
                 <p>Přes 2 roky jsem vedl tým technické podpory na Shoptetu a téměř 10 let se e-shopům na Shoptetu věnuji. Mám tak velmi dobrý vhled do samotné aplikace i jejího chování a nastavení. Ať už se jedná o základní nastavení aplikace, napojení dalších služeb nebo třeba správa domén a nastavení veškerých DNS záznamů či pomoc při opravě e-shopu. S tím vším vám pomohu a vy se tak můžete naplno věnovat samotnému prodeji.</p>
                 <p style="margin-top: 1rem;">Sám vím, že administrace občas obsahuje velmi mnoho informací a člověku může nějakou dobu zabrat, než se vším prokouše a pochopí, co vše má vlastně udělat a jak celý e-shop nastavit. Času ale není nekonečně a jistě jej dokážete využít lépe. Rád vám pomohu se školením Shoptetu, ať už osobně v Praze nebo formou telefonátu či vzdálené plochy.</p>
             </div>
 
             <div class="services-grid">
-                <div class="service-card animate-on-scroll">
+                <div class="service-card">
                     <div class="service-icon">⚙️</div>
                     <h3>Nastavení e-shopu</h3>
                     <p>Pomůžu vám s úpravami produktů. Upravím vám DNS záznamy a pomohu s nastavením dalších věcí v administraci tak, abyste se mohli naplno věnovat prodeji a nic vás nebrzdilo.</p>
                 </div>
 
-                <div class="service-card animate-on-scroll" style="animation-delay: 0.1s;">
+                <div class="service-card">
                     <div class="service-icon">🎓</div>
                     <h3>Školení a konzultace</h3>
                     <p>Začínáte s e-shopem a nevíte, jak nastavit systém podle vašich představ nebo jakým způsobem s administrací pracovat či co vůbec nastavit? Vše potřebné vám vysvětlím.</p>
                 </div>
 
-                <div class="service-card animate-on-scroll" style="animation-delay: 0.2s;">
+                <div class="service-card">
                     <div class="service-icon">📊</div>
                     <h3>Analýza e-shopu</h3>
                     <p>Nejste si jistí, zda e-shop využíváte naplno? Potřebujete pomoci s automatizací některých činností v administraci? Projdu váš e-shop a navrhnu potřebné úpravy.</p>
                 </div>
 
-                <div class="service-card animate-on-scroll" style="animation-delay: 0.3s;">
+                <div class="service-card">
                     <div class="service-icon">🔧</div>
                     <h3>Správa e-shopu</h3>
                     <p>Nemáte čas na změnu cen, skladových zásob nebo chcete spravovat i jiné věci v e-shopu? Pomohu vám se správou a zajistím vám aktualizaci dat.</p>
                 </div>
 
-                <div class="service-card animate-on-scroll" style="animation-delay: 0.4s;">
+                <div class="service-card">
                     <div class="service-icon">🔄</div>
                     <h3>Převod e-shopu</h3>
                     <p>Chcete přejít k Shoptetu, ale nevíte, jak začít a jakým způsobem vše přesunout? Vše vysvětlím a s přesunem vám pomohu.</p>
                 </div>
 
-                <div class="service-card animate-on-scroll" style="animation-delay: 0.5s;">
+                <div class="service-card">
                     <div class="service-icon">🧩</div>
                     <h3>Rozšíření e-shopu</h3>
                     <p>Nejste si jistí, jaké rozšíření je pro vás to správné? Projdu s vámi vaše potřeby a podle toho vám doporučím ten správný doplněk.</p>
@@ -449,22 +532,22 @@
             <h2 class="section-title">Co o mé pomoci říkají klienti?</h2>
             
             <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-card">
                     <p class="testimonial-text">"Děkuji Mírovi za veškerou jeho trpělivost a pomoc s nastavováním funkcí našeho e-shopu. Míra je strašně lidský, vše normálně vysvětlí, tak aby tomu rozuměl i úplný laik a vlastně celá komunikace i nastavování je nesmírně komfortní. Ještě jednou moc díky, jsem ráda, že jsem se na Tebe mohla s důvěrou obrátit a věřím, že i do budoucna budeme mít další záležitosti k řešení. :-)"</p>
-                    <div class="testimonial-author">Jana</div>
-                    <div class="testimonial-company">golfstars.cz</div>
+                    <div class="testimonial-author"><a href="https://partneri.shoptet.cz/profesionalove/kubat-miroslav/#comment-15919" target="_blank" style="color: white; text-decoration: none;">Jana</a></div>
+                    <div class="testimonial-company"><a href="https://www.golfstars.cz" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">golfstars.cz</a></div>
                 </div>
 
-                <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.1s;">
+                <div class="testimonial-card">
                     <p class="testimonial-text">"Absolvovala jsem u pana Kubáta školení užívání Shoptetu a můžu jeho služby stoprocentně doporučit. Všechny mé otázky mi byly zodpovězeny, s každým dotazem si poradil a vše srozumitelně vysvětlil, byl trpělivý, milý a zároveň profesionální. Oceňuji i vlastní názor na náš současný e-shop a také cenné rady, co a jak vylepšit. Pokud budu v budoucnu potřebovat opět s něčím poradit, určitě se znovu obrátím na pana Kubáta."</p>
-                    <div class="testimonial-author">Jana</div>
-                    <div class="testimonial-company">karavany-krs.cz</div>
+                    <div class="testimonial-author"><a href="https://partneri.shoptet.cz/profesionalove/kubat-miroslav/#comment-14729" target="_blank" style="color: white; text-decoration: none;">Jana</a></div>
+                    <div class="testimonial-company"><a href="https://www.karavany-krs.cz/" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">karavany-krs.cz</a></div>
                 </div>
 
-                <div class="testimonial-card animate-on-scroll" style="animation-delay: 0.2s;">
+                <div class="testimonial-card">
                     <p class="testimonial-text">"Pan Kubát mě velmi potěšil a především pomohl. Budoucí e-shop je těsně před spuštěním a s některými detaily jsem si nevěděl rady. Pan Kubát mi zodpověděl všechny otázky, poradil jak nastavit co potřebuji a ještě dodal několik cenných rad k e-commerci. Ve spolupráci budeme i nadále pokračovat. Děkuji!"</p>
-                    <div class="testimonial-author">Pavel</div>
-                    <div class="testimonial-company">tokafe.cz</div>
+                    <div class="testimonial-author"><a href="https://partneri.shoptet.cz/profesionalove/kubat-miroslav/#comment-14305" target="_blank" style="color: white; text-decoration: none;">Pavel</a></div>
+                    <div class="testimonial-company"><a href="https://www.tokafe.cz" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none;">tokafe.cz</a></div>
                 </div>
             </div>
         </div>
@@ -472,37 +555,64 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Potřebujete poradit? Jsem tu pro vás!</h2>
-            <a href="mailto:info@mirakubat.cz" class="cta-button">Napište mi</a>
+            <h2 class="section-title" style="color: black;">Potřebujete poradit? Jsem tu pro vás!</h2>
+            <div class="intro-text" style="text-align: center;">
+    <p>
+        Nejste si jistí, jak dál s vaším e-shopem, nebo potřebujete rychlou radu?
+        Ozvěte se mi a společně najdeme řešení, které vám ušetří čas i starosti.
+    </p>
+</div>
+            <a href="kontakt.html" class="cta-button">Napište mi</a>
         </div>
     </section>
 
+    <!-- Cookie Bar -->
+    <div class="cookie-bar" id="cookieBar">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <strong>🍪 Používáme cookies</strong><br>
+                Tento web používá soubory cookie pro zlepšení uživatelské zkušenosti. Používáním našich webových stránek souhlasíte se všemi cookies v souladu s našimi zásadami cookie.
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Souhlasím</button>
+                <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Odmítnout</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-links">
-            <a href="#">Zásady ochrany osobních údajů</a>
-            <a href="#">Zásady používání souborů cookies</a>
+            <a href="/zasady-ochrany-osobnich-udaju.html">Zásady ochrany osobních údajů</a>
+            <a href="/zasady-pouzivani-souboru-cookie.html">Zásady používání souborů cookies</a>
         </div>
-        <div class="copyright">© 2024 Míra Kubát</div>
+        <div class="copyright">© 2026 Míra Kubát</div>
     </footer>
 
     <script>
-        // Scroll animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // Cookie Bar functionality
+        function showCookieBar() {
+            const cookieBar = document.getElementById('cookieBar');
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            
+            if (!cookieConsent) {
+                setTimeout(() => {
+                    cookieBar.classList.add('show');
+                }, 1000);
+            }
+        }
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBar').classList.remove('show');
+        }
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBar').classList.remove('show');
+        }
+
+        // Show cookie bar on page load
+        window.addEventListener('load', showCookieBar);
     </script>
 </body>
 </html>
